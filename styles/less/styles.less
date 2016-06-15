@@ -1,0 +1,62 @@
+@import url(https://fonts.googleapis.com/css?family=Exo+2|PT+Sans+Narrow&subset=latin,cyrillic);
+
+@headerBg: #1d365d;
+@textColor: #000022;
+@bgColor: #fbf5f3;
+@gradientColor1: #43759e;
+@gradientColor2: #36556e;
+
+.bodyFont{
+	font-family: 'Exo 2', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.buttonFont{
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 48px;
+	font-weight: 400;
+}
+
+.gradient (@startColor: @gradientColor1, @endColor: @gradientColor2) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+}
+
+
+.get-vw (@target, @max-size) { 
+  @vw-context: (@max-size*.01) * 1px;
+  @returnvw: (@target/@vw-context) * 1vw;
+}
+
+/* END OF VARIABLES AND MIXINS */
+
+body{
+	background-color: @bgColor;
+	.bodyFont;
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+
+header{
+	background: @headerBg;
+	height: 100px;
+
+	.logo{}
+
+	.button{}
+}
+
+.container{
+	.get-vw(1280px, 1920px);
+	width: @returnvw;
+	height: 100%;
+	display: inline-block;
+}
+
+
+
