@@ -57,7 +57,26 @@ header{
 	height: 100%;
 	display: inline-block;
 
+
 	p{
 		padding: 5px;
+	}
+
+
+	.half{
+		width: 50%;
+	}
+	.third{
+		@third: 33,333%;
+		width: @third;
+
+		/* doesn't work
+		&s-two{
+			width: 2*@third;
+		}	
+		*/
+	}
+	.quarter{
+		width: 25%;
 	}
 }
