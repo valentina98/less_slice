@@ -44,39 +44,84 @@ body{
 
 header{
 	background: @headerBg;
-	height: 100px;
+	height: 5vw;
 
-	.logo{}
+	.logo{
+		margin: 0.5vw;
+		width: 8vw;
+	}
 
-	.button{}
+	.button{
+		margin: 0.5vw;
+		width:10vw;
+	}
+
+	.LESS-logo{
+		margin: 0 2vw;
+	}
+}
+
+img{
+	display: block;
+    height: auto;
+    max-width: 100%;
 }
 
 .container{
 	.get-vw(1280px, 1920px);
 	width: @returnvw;
+	margin: 0 (100-@returnvw)/2;
 	height: 100%;
 	display: inline-block;
+	position: relative;
 
+	& > div{
+		height: 100%;
+	}
+
+	.col-half{
+		width: 50%;
+	}
+
+	.col-third{
+		width: 33.3%;
+	}
+
+	.col-two-thirds{
+		width: 66.6%;
+	}
+
+	.col-quarter{
+		width: 25%;
+	}
 
 	p{
 		padding: 5px;
 	}
 
+	div{
+		margin-bottom: 30%;
+	}
 
-	.half{
-		width: 50%;
+	.button{
+		
 	}
-	.third{
-		@third: 33,333%;
-		width: @third;
 
-		/* doesn't work
-		&s-two{
-			width: 2*@third;
-		}	
-		*/
-	}
-	.quarter{
-		width: 25%;
-	}
+}
+
+.centerBlock{
+	margin: auto;
+}
+
+.pullRight{
+	float: right;
+}
+
+.pullLeft{
+	float: left;
+}
+
+.button{
+	.buttonFont;
+	.gradient;
 }
