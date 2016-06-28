@@ -104,9 +104,13 @@ img{
 .container{
 	.get-vw(1280px, 1920px);
 	width: @returnvw;
-	margin: 0 (100-@returnvw)/2;
+	//margin: 0 (100-@returnvw)/2; tova e izlishno, kogato polzvash
+	//margin-left i margin-right: auto;
 	height: 100%; //?
-	display: inline-block;
+	//display: inline-block; za tova ti stava horizontalniq scroll
+	display: block;
+	margin-right: auto;
+	margin-left: auto; //s gornite 3 reda ti se centrira sydyrjanieto na diva
 	position: relative;
 
 	section & > div{
@@ -145,6 +149,8 @@ img{
 
 .centerBlock{
 	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .pullRight{
@@ -160,4 +166,9 @@ img{
 .button{
 	.buttonFont;
 	.gradient;
+	border-radius: 4px;
+}
+
+footer{
+	margin-bottom: 15px;
 }
