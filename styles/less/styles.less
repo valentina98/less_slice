@@ -6,7 +6,7 @@
 @gradientColor1: #43759e;
 @gradientColor2: #36556e;
 
-@divHeight: 20vw;
+@divHeight: 16vw;
 
 .bodyFont{
 	font-family: 'Exo 2', sans-serif;
@@ -27,8 +27,10 @@
 
 	&.large{
 		display: block;
-		padding: 1 5vw;
-		margin: 5vw 0;
+		width: 100%;
+		padding: 5px 0;
+		//padding: 1 5vw; - purvo 1 kakvo, vtoro 5vw nqma smisul, zashtoto taka ili inache e centriran butona ot predniq div
+		//margin: 5vw 0; - nevah, ako iskash da slojish razstoqnie go pravish na div-a, koito go obviva, ne na samiq buton
 	}
 
 	header &{
@@ -58,15 +60,18 @@ body{
 	background-color: @bgColor;
 	.bodyFont;
 	box-sizing: border-box;
-	margin: 0 auto; //?
-
-	overflow-x: hidden;
-
+	margin: 0 auto; //zalepq sudurjanieto otgore i centrira - 0 e stoinostta otgore i otdolu, auto e ot lqvo i dqsno
 }
 
 header{
 	background: @headerBg;
-	height: 4.2vw;
+	//height: 4.2vw; //zashto?
+	.get-vw(100px, 1920px);
+	height: @returnvw;
+
+	.container{
+		padding-top: 8px;
+	}
 
 	.logo{
 		width: 7vw;
@@ -108,7 +113,7 @@ img{
 	width: @returnvw;
 	//margin: 0 (100-@returnvw)/2; tova e izlishno, kogato polzvash
 	//margin-left i margin-right: auto;
-	height: 100%; //?
+	height: 100%; //vzima visochinata na sudurjanieto
 	//display: inline-block; za tova ti stava horizontalniq scroll
 	display: block;
 	margin-right: auto;
@@ -116,15 +121,16 @@ img{
 	position: relative;
 
 	section & > div{
-		height: @divHeight;
-		margin-bottom: 5vw;
+		min-height: @divHeight; //ne zalagai fixiran height, osven ako ne e nalojitelno
+		margin: 1.5vw 0;
 		//display: block;
 
 		&.borderBottom{
 			border-bottom: 1px solid black;
-			&:nth-of-type(1) {
-				margin-top: 5vw;
-			}
+			padding: 1.5vw 0;
+			//&:nth-of-type(1) {
+			//	margin-top: 5vw;
+			//}
 		}
 	}
 
@@ -135,6 +141,7 @@ img{
 
 	.col-half{
 		width: 50%;
+		height: auto;
 	}
 	.col-third{
 		width: 33.3%;
@@ -171,4 +178,9 @@ img{
 
 footer{
 	margin-bottom: 15px;
+	height: 100%;
+
+	& .container > div{
+		padding: 2vw 0;
+	}
 }
